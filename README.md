@@ -95,10 +95,10 @@ python app.py
 ![Home Page](screenshots/homepage.png.png)
 
 ### Genuine Signature Detection
-![Genuine Signature](screenshots/genuine.png.png)
+![Genuine](screenshots/genuine.png.png)
 
 ### Forged Signature Detection
-![Forgery Detection](screenshots/forgery.png.png)
+![Forgery](screenshots/forgery.png.png)
 
 ### Prediction History
 ![History](screenshots/history.png.png)
