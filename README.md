@@ -92,13 +92,13 @@ python app.py
 ## Project Screenshots
 
 ### Home Page
-![Home Page](screenshots/homepage.png.png)
+![Home Page](homepage.png.png)
 
 ### Genuine Signature Detection
-![Genuine](screenshots/genuine.png.png)
+![Genuine](genuine.png.png)
 
 ### Forged Signature Detection
-![Forgery](screenshots/forgery.png.png)
+![Forgery](forgery.png.png)
 
 ### Prediction History
-![History](screenshots/history.png.png)
+![History](history.png.png)
