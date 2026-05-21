@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About | Signature Forgery Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+    Signature Forgery Detection System
+</div>
+
+<!-- MAIN CARD -->
+<div class="card about-card">
+
+    <h2>About the Project</h2>
+
+    <p>
+        The <b>Signature Forgery Detection System</b> is a deep learning–based web
+        application developed to verify handwritten signatures and identify whether
+        a given signature is <b>Genuine</b> or <b>Forged</b>.
+    </p>
+
+    <h3>🎯 Project Objective</h3>
+    <ul>
+        <li>To automate handwritten signature verification</li>
+        <li>To reduce human error in manual signature checking</li>
+        <li>To provide a secure and reliable verification system</li>
+        <li>To maintain user test history for tracking and analysis</li>
+    </ul>
+
+    <h3>⚙️ How the System Works</h3>
+    <ol>
+        <li>User logs in using email and password</li>
+        <li>User uploads a signature image</li>
+        <li>The image is preprocessed using OpenCV</li>
+        <li>A trained CNN model analyzes the signature</li>
+        <li>The system predicts whether the signature is Genuine or Forged</li>
+        <li>The result and accuracy are displayed</li>
+        <li>Test details are saved for future reference</li>
+    </ol>
+
+    <h3>🧠 Technology Used</h3>
+    <ul>
+        <li><b>Frontend:</b> HTML, CSS</li>
+        <li><b>Backend:</b> Python (Flask)</li>
+        <li><b>Database:</b> SQLite</li>
+        <li><b>Deep Learning:</b> CNN (TensorFlow & Keras)</li>
+        <li><b>Image Processing:</b> OpenCV</li>
+    </ul>
+
+    <h3>👤 User Module</h3>
+    <ul>
+        <li>User Registration & Login</li>
+        <li>Upload and test signatures</li>
+        <li>View result and accuracy</li>
+        <li>View test history</li>
+        <li>Secure logout</li>
+    </ul>
+
+    <h3>🛡️ Admin Module</h3>
+    <ul>
+        <li>Admin login with fixed credentials</li>
+        <li>View registered users</li>
+        <li>View all signature test history</li>
+        <li>Monitor user activities</li>
+    </ul>
+
+    <h3>📈 Advantages</h3>
+    <ul>
+        <li>Fast and accurate verification</li>
+        <li>Reduces manual effort</li>
+        <li>User-friendly interface</li>
+        <li>Secure data storage</li>
+    </ul>
+
+    <h3>🔮 Future Enhancements</h3>
+    <ul>
+        <li>Improve model accuracy with larger datasets</li>
+        <li>Support real-time signature capture</li>
+        <li>Cloud deployment</li>
+        <li>Mobile application integration</li>
+    </ul>
+
+    <p style="margin-top:20px;">
+        <b>Conclusion:</b>  
+        This project demonstrates how deep learning can be effectively used to solve
+        real-world security problems by automating signature verification in a secure
+        and reliable manner.
+    </p>
+
+    <a href="/dashboard" class="btn back-btn">⬅ Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="top-header">
+    Signature Forgery Detection System
+</div>
+
+
+<h1 class="main-title">Signature Forgery Detection System</h1>
+
+<div class="admin-container">
+
+    <h2>Admin Dashboard</h2>
+
+    <!-- USERS -->
+    <div class="admin-section">
+        <h3>Registered Users</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+            </tr>
+            {% for u in users %}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{{ u.email }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="admin-section">
+        <h3>Signature Test History</h3>
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Image</th>
+                <th>Result</th>
+            </tr>
+            {% for h in history %}
+            <tr>
+                <td>{{ h.user_email }}</td>
+                <td>{{ h.image_name }}</td>
+                <td>{{ h.result }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <a class="logout-btn" href="/logout">Logout</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
+}
+
+.header {
+    background: #1a237e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #3949ab;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #1a237e;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+/* ---------- COMMON ---------- */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #eef2f3, #d9e2ec);
+    margin: 0;
+    padding: 0;
+}
+
+.main-title {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* ---------- ADMIN DASHBOARD ---------- */
+.admin-container {
+    width: 75%;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.admin-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.admin-section {
+    margin-bottom: 30px;
+}
+
+.admin-section h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+/* ---------- TABLE ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #2c7be5;
+    color: white;
+    padding: 10px;
+}
+
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* ---------- LOGOUT BUTTON ---------- */
+.logout-btn {
+    display: block;
+    width: 120px;
+    margin: 20px auto 0;
+    padding: 10px;
+    text-align: center;
+    background: #e74c3c;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+/* ---------- TOP HEADER ---------- */
+.top-header {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.about-card {
+    width: 750px;
+    text-align: left;
+}
+
+.about-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    margin-top: 20px;
+    color: #2563eb;
+}
+
+.about-card ul,
+.about-card ol {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.back-btn:hover {
+    background: #1d4ed8;
+}
+

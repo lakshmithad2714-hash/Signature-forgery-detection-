@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="train-section">
+    <div class="train-art">
+        <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/brain.svg" alt="Train Model"/>
+    </div>
+    <div class="train-info">
+        <h1 style="font-size:2.5rem; color:#232946; margin-bottom:10px;">Train Model</h1>
+        <h2>Model Training</h2>
+        <p class="train-status">Model is already trained and ready to use.</p>
+        <div class="train-accuracy">
+            <span>Accuracy:</span>
+            <span class="badge">{{ accuracy }}%</span>
+        </div>
+        <div class="train-actions">
+            <a href="/test" class="hero-btn primary">Test Signature</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

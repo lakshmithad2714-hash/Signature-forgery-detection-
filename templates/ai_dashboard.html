@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="logo">🧠</div>
+        <nav>
+            <a href="/test">Test Signature</a>
+            <a href="/history">History</a>
+            <a href="/about">About</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-text" style="margin: 0 auto;">
+                <h1>Signature Forgery Detection</h1>
+                <p>Upload a signature to verify its authenticity using deep learning.</p>
+            </div>
+        </section>
+        <section class="upload-section">
+            <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                <div id="drop-area" class="drop-area">
+                    <input type="file" id="fileElem" name="signature" accept="image/*" required hidden>
+                    <label for="fileElem" id="fileLabel">
+                        <span>Drag & drop or click to upload signature</span>
+                    </label>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+                <button type="submit" id="analyzeBtn">Analyze</button>
+            </form>
+            <div id="loader" class="loader" style="display:none;">
+                <div class="spinner"></div>
+                <span>Analyzing Signature...</span>
+            </div>
+            <div id="predictionCard" class="prediction-card" style="display:none;">
+                <h2>Prediction Result</h2>
+                <div id="resultText"></div>
+                <div id="accuracyText"></div>
+            </div>
+        </section>
+    </main>
+</div>
+<script>
+// Drag & drop and preview
+const dropArea = document.getElementById('drop-area');
+const fileElem = document.getElementById('fileElem');
+const imagePreview = document.getElementById('imagePreview');
+const loader = document.getElementById('loader');
+const predictionCard = document.getElementById('predictionCard');
+const resultText = document.getElementById('resultText');
+const accuracyText = document.getElementById('accuracyText');
+const analyzeBtn = document.getElementById('analyzeBtn');
+
+function showPreview(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        imagePreview.innerHTML = `<img src="${e.target.result}" alt="Signature Preview"/>`;
+    };
+    reader.readAsDataURL(file);
+}
+
+dropArea.addEventListener('click', () => fileElem.click());
+dropArea.addEventListener('dragover', e => {
+    e.preventDefault();
+    dropArea.classList.add('dragover');
+});
+dropArea.addEventListener('dragleave', e => {
+    e.preventDefault();
+    dropArea.classList.remove('dragover');
+});
+dropArea.addEventListener('drop', e => {
+    e.preventDefault();
+    dropArea.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) {
+        fileElem.files = e.dataTransfer.files;
+        showPreview(file);
+    }
+});
+fileElem.addEventListener('change', e => {
+    if (fileElem.files[0]) {
+        showPreview(fileElem.files[0]);
+    }
+});
+
+// Form submit with loader and prediction
+const uploadForm = document.getElementById('uploadForm');
+uploadForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    loader.style.display = 'flex';
+    predictionCard.style.display = 'none';
+    analyzeBtn.disabled = true;
+    const formData = new FormData(uploadForm);
+    const response = await fetch('/test', {
+        method: 'POST',
+        body: formData
+    });
+    loader.style.display = 'none';
+    analyzeBtn.disabled = false;
+    if (response.ok) {
+        const data = await response.json();
+        predictionCard.style.display = 'block';
+        resultText.innerHTML = `<span class="${data.result === 'Genuine' ? 'genuine' : 'forged'}">${data.result}</span>`;
+        accuracyText.textContent = `Accuracy: ${data.accuracy}%`;
+        predictionCard.className = `prediction-card ${data.result === 'Genuine' ? 'genuine-bg' : 'forged-bg'}`;
+    } else {
+        resultText.textContent = 'Error analyzing signature.';
+        predictionCard.style.display = 'block';
+    }
+});
+</script>
+{% endblock %}

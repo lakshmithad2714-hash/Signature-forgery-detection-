@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="result-section">
+    <div class="result-art">
+        <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/contract.svg" alt="Result"/>
+    </div>
+    <div class="result-info">
+        <h2>Prediction Result</h2>
+        <div class="result-card {{ 'genuine-bg' if result == 'Genuine' else 'forged-bg' }}">
+            <span class="result-label {{ 'genuine' if result == 'Genuine' else 'forged' }}">
+                {{ result }}
+            </span>
+            <div class="accuracy-bar">
+                <span>Accuracy:</span>
+                <span class="badge">{{ accuracy }}%</span>
+            </div>
+        </div>
+        <div class="result-actions">
+            <a href="/test" class="hero-btn primary">Test Another Signature</a>
+            <a href="/history" class="hero-btn">View History</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

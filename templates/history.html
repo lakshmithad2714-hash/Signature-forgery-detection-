@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="top-header">
+    Signature Forgery Detection System
+</div>
+
+<div class="card">
+    <h2>Test History</h2>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    {% if records %}
+    <div class="history-grid">
+        {% for row in records %}
+        <div class="history-card {{ 'genuine-bg' if row['result'] == 'Genuine' else 'forged-bg' }}">
+            <div class="history-image-name">{{ row["image_name"] }}</div>
+            <div class="history-result {{ 'genuine' if row['result'] == 'Genuine' else 'forged' }}">{{ row["result"] }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No history found.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
