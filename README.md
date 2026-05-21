@@ -50,3 +50,42 @@ Signature-forgery-detection/
 ├── model.h5
 ├── requirements.txt
 └── README.md
+## Installation and Setup
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/lakshmithad2714-hash/Signature-forgery-detection-.git
+```
+
+### Step 2: Navigate to Project Folder
+
+```bash
+cd Signature-forgery-detection-
+```
+
+### Step 3: Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Step 4: Activate Virtual Environment
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Step 5: Install Required Libraries
+
+```bash
+pip install tensorflow keras opencv-python numpy matplotlib pandas scikit-learn pillow flask
+```
+
+### Step 6: Run the Project
+
+```bash
+python app.py
+```
