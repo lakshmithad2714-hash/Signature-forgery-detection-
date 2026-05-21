@@ -89,3 +89,16 @@ pip install tensorflow keras opencv-python numpy matplotlib pandas scikit-learn 
 ```bash
 python app.py
 ```
+## Project Screenshots
+
+### Home Page
+![Home Page](screenshots/homepage.png.png)
+
+### Genuine Signature Detection
+![Genuine Signature](screenshots/genuine.png.png)
+
+### Forged Signature Detection
+![Forgery Detection](screenshots/forgery.png.png)
+
+### Prediction History
+![History](screenshots/history.png.png)
